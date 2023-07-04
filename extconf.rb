@@ -2,7 +2,7 @@ require 'mkmf'
 require 'numo/narray'
 
 $LOAD_PATH.each{|lp|
-  if File.exists?(File.join(lp, 'numo/numo/narray.h'))
+  if File.exist?(File.join(lp, 'numo/numo/narray.h'))
     $INCFLAGS = "-I#{lp}/numo #{$INCFLAGS}"
     break
   end
