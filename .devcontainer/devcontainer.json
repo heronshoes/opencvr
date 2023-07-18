@@ -1,14 +1,22 @@
 {
-    "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-	"init": true,
+	"name": "opencvr Dev Container",
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
 	"features": {
 		"ghcr.io/devcontainers/features/python:1": {
 			"installTools": true,
 			"installJupyterlab": true,
-			"version": "latest"
+			"version": "3.11"
 		},
 		"ghcr.io/devcontainers/features/ruby:1": {
-			"version": "latest"
-		}
-	}
+			"version": "3.2"
+		},
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	// Use init process to deal with zombie process
+	"init": true,
+	// set TZ from local machine's environment defaulting to 'UTC' if not supplied.
+	"containerEnv": {
+		"TZ": "${localEnv:TZ:UTC}"
+	},
+	"onCreateCommand": ".devcontainer/onCreateCommand.sh"
 }
