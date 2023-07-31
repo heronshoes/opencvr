@@ -10,3 +10,4 @@ settings.sh
 headers.txt
 log-*
 /autogen
+Gemfile.lock
