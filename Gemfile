@@ -2,8 +2,7 @@
 
 source 'https://rubygems.org'
 
-# gemspec
-gem 'numo-narray'
+gemspec
 
 group :test do
   gem 'rake'
